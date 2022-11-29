@@ -2,18 +2,17 @@
 Library    SeleniumLibrary
 Library    OperatingSystem
 Resource    ../testdata/testdata.resource   
+Resource    ../testdata/commons.resource
 Resource    ../logic/logic.resource
 *** Variables ***
 ${ENV}    
-${DEV_URL}    https://dev.example.com/
-${SB_URL}    https://sandbox.example.com/
-${PROD_URL}    https://prod.example.com/
+
 
 ##ELEMENT
 
 *** Test Cases ***
 Demo
-    Log    ${${ENV}_URL}
+    Log To Console    ${${ENV}_URL}
 
     IF    '${ENV}' == 'DEV'
     fitur A pada DEV
